@@ -144,7 +144,7 @@ int Solution::calculate_make_span()
 	return make_span;
 }
 
-int Solution::neh_fam_1()
+int Solution::neh_fam()
 {
 	std::vector<Family*> tmp_families = problem.families;
 
@@ -156,94 +156,6 @@ int Solution::neh_fam_1()
 		{
 			job_sequence_in_each_family[fam_ptr->id].emplace_back(jobPtr);
 		}
-	}
-
-	std::sort(std::begin(tmp_families), std::end(tmp_families), [](auto fam_prt1, auto fam_ptr2)
-	{
-		return fam_prt1->total_process_time > fam_ptr2->total_process_time;
-	});
-
-	int min_span;
-	for (auto fam_ptr: tmp_families)
-	{
-		min_span = INT_MAX;
-		int best_pos = -1;
-		for (int pos = 0; pos < family_sequence.size() + 1; ++pos)
-		{
-			family_sequence.insert(std::begin(family_sequence) + pos, fam_ptr);
-			int span = calculate_make_span();
-			if (min_span > span)
-			{
-				min_span = span;
-				best_pos = pos;
-			}
-			family_sequence.erase(std::begin(family_sequence) + pos);
-		}
-		family_sequence.insert(std::begin(family_sequence) + best_pos, fam_ptr);
-	}
-	return min_span;
-}
-
-int Solution::neh_fam_2()
-{
-	std::vector<Family*> tmp_families = problem.families;
-
-	job_sequence_in_each_family.resize(problem.num_of_families);
-
-	for (auto fam_ptr: problem.families)
-	{
-		for (auto jobPtr: fam_ptr->jobs)
-		{
-			job_sequence_in_each_family[fam_ptr->id].emplace_back(jobPtr);
-		}
-		std::sort(std::begin(job_sequence_in_each_family[fam_ptr->id]),
-				std::end(job_sequence_in_each_family[fam_ptr->id]), [](auto job_prt1, auto job_ptr2)
-				{
-					return job_prt1->total_process_time > job_ptr2->total_process_time;
-				});
-	}
-
-	std::sort(std::begin(tmp_families), std::end(tmp_families), [](auto fam_prt1, auto fam_ptr2)
-	{
-		return fam_prt1->total_process_time > fam_ptr2->total_process_time;
-	});
-
-	int min_span;
-	for (auto fam_ptr: tmp_families)
-	{
-		min_span = INT_MAX;
-		int best_pos = -1;
-		for (int pos = 0; pos < family_sequence.size() + 1; ++pos)
-		{
-			family_sequence.insert(std::begin(family_sequence) + pos, fam_ptr);
-			int span = calculate_make_span();
-			if (min_span > span)
-			{
-				min_span = span;
-				best_pos = pos;
-			}
-			family_sequence.erase(std::begin(family_sequence) + pos);
-		}
-		family_sequence.insert(std::begin(family_sequence) + best_pos, fam_ptr);
-	}
-	return min_span;
-}
-
-int Solution::neh_fam_3()
-{
-	std::vector<Family*> tmp_families = problem.families;
-
-	job_sequence_in_each_family.resize(problem.num_of_families);
-
-	for (auto fam_ptr: problem.families)
-	{
-		for (auto jobPtr: fam_ptr->jobs)
-		{
-			job_sequence_in_each_family[fam_ptr->id].emplace_back(jobPtr);
-		}
-//		shuffle(std::begin(job_sequence_in_each_family[fam_ptr->id]),
-//				std::end(job_sequence_in_each_family[fam_ptr->id]),
-//				rand_generator());
 		std::sort(std::begin(job_sequence_in_each_family[fam_ptr->id]),
 				std::end(job_sequence_in_each_family[fam_ptr->id]), [](auto job_prt1, auto job_ptr2)
 				{

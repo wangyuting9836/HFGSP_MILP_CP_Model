@@ -2,12 +2,11 @@
 // Created by wangy on 2023/4/26.
 //
 
-#include <iostream>
 #include <string>
 #include <numeric>
-#include <matplotlibcpp.h>
-#include <iomanip>
 #include <sstream>
+
+#include "matplotlibcpp.h"
 #include "Family.h"
 #include "Job.h"
 #include "PyGantt.h"
@@ -20,7 +19,7 @@ std::vector<std::string> PyGantt::color_dict =
 		  "LightGoldenRodYellow", "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen",
 		  "LightSkyBlue", "LightSlateBlue", "LightSlateGray", "LightSteelBlue", "White" };
 
-void PyGantt::ganttForward(const Solution& solution)
+void PyGantt::gantt(const Solution& solution)
 {
 	plt::figure_size(1000, 250);
 	int makeSpan = solution.make_span;

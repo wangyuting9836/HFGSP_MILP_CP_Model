@@ -17,5 +17,4 @@ if (Python3_FOUND)
     target_link_libraries(HFGSP_NEH ${Python3_LIBRARIES})
 endif (Python3_FOUND)
 
-include_directories("D:/coding_net/matplotlib-cpp")
 include_directories("D:/Python311/Lib/site-packages/numpy/core/include")

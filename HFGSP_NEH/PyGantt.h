@@ -11,7 +11,7 @@ class PyGantt
 {
 	static std::vector<std::string> color_dict;
 public:
-	static void ganttForward(const Solution& solution);
+	static void gantt(const Solution& solution);
 };
 
 

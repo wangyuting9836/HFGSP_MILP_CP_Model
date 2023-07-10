@@ -30,14 +30,8 @@ class Solution
 public:
 	explicit Solution(const Problem& problem);
 
-	int neh_fam_1();
-
-	int neh_fam_2();
-
-	int neh_fam_3();
-
+	int neh_fam();
 	int neh_fam_job();
-
 	int calculate_make_span();
 
 	const Problem& problem;
