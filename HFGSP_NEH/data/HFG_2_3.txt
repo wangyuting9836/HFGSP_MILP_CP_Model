@@ -1,0 +1,41 @@
+Families:
+2
+Stages:
+3
+Number of Machines at each Stage:
+2	2	3	
+Machines at each Stage:
+1	1	2	
+2	3	4	
+3	5	6	7	
+Total number of machines:
+7
+Number of Jobs in each Family:
+5	9	
+Jobs in each Family:
+1	1	2	3	4	5	
+2	6	7	8	9	10	11	12	13	14	
+Total number of jobs:
+14
+Processing times of jobs:
+9	3	6	
+2	3	5	
+10	4	8	
+6	3	2	
+5	3	3	
+4	8	7	
+1	1	9	
+1	7	7	
+10	7	6	
+1	5	5	
+7	2	5	
+5	3	9	
+9	5	3	
+9	7	1	
+Setup times:
+50	19	
+36	48	
+29	34	
+28	2	
+15	8	
+33	32	
