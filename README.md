@@ -1,2 +1,2 @@
 # HFGSP_MILP_CP_Model
-Hybrid flow shop group scheduling problem: constraint programming and more mixed-integer linear programming models
+This is the official code of the publised paper 'Redefining hybrid flow shop group scheduling: Unveiling a novel hybrid modeling paradigm and assessing 48 MILP and CP models'
